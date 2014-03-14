@@ -3,6 +3,8 @@ ruby '2.0.0'
 #ruby-gemset=railstutorial_rails_4_0
 
 gem 'rails', '4.0.2'
+gem 'sprockets', '2.11.0'
+gem 'bootstrap-sass', '3.0.2.0'
 
 
 group :development, :test do
@@ -24,11 +26,6 @@ gem 'jbuilder', '1.0.2'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
-end
-
-group :assets do
-  
-  gem 'bootstrap-sass', '~> 3.0.2.0'
 end
 
 group :production do
