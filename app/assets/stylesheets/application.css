@@ -11,3 +11,12 @@
  *= require_self
  *= require_tree .
  */
+ /* ...
+*= boot-business
+*= bootstrap-responsive
+*= bootstrap-responsive.min
+*= bootstrap
+*= bootstrap.min
+*= font-awesome-ie7
+*= font-awesome
+*/

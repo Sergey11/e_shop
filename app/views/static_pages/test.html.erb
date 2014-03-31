@@ -1,0 +1,72 @@
+
+
+<body>
+
+<form method="post">
+    <div class="modal hide fade" id="email">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Отправить уникальный код на e-mail</h3>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="span5" placeholder="e-mail" name="email">
+          <p class="help-block">Позволяет синхронизировать прочитанные на разных компьютерах новости.</p>
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn" data-dismiss="modal">Отменить</button>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+      </div>
+    </div>
+  </form>
+
+  <form method="post">
+    <div class="modal hide fade" id="new_uid">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Ввести уникальный код читателя</h3>
+      </div>
+      <div class="modal-body">
+      <input type="text" class="span5" placeholder="Уникальный код" name="new_uid">
+          <p class="help-block">Позволяет синхронизировать прочитанные на разных компьютерах новости.</p>
+      </div>
+      <div class="modal-footer">
+          <button type="submit" class="btn" data-dismiss="modal">Отменить</button>
+          <button type="submit" class="btn btn-primary">Отправить</button>
+      </div>
+    </div>
+  </form>
+
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="">***</a>
+        <ul class="nav">
+          <li><a href="{Ссылка}">rss</a></li>
+          <li><a href="{Ссылка}">chrome extension</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Ваш уникальный код читателя <strong>{Код}</strong><b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a data-toggle="modal" href="#email">Отправить на e-mail</a></li>
+            <li><a data-toggle="modal" href="#new_uid">Ввести другой код</a></li>
+          </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>{Дата}</td>
+          <td>{Время}</td>
+          <td><a href="{Ссылка}">{Заголовок}</a> ({Количество переходов})</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
