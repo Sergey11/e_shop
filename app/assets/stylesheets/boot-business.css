@@ -15,7 +15,7 @@
 .navbar-inner, footer {
   border: none;
   padding: 15px 0;
-  background: url("../assets/header-footer.png");
+ background: url("../assets/header-footer.png");
 }
 .navbar .brand-bootbus {
 	font-size: 30px;
