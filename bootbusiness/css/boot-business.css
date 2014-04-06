@@ -17,6 +17,11 @@
   padding: 15px 0;
   background: url("../img/header-footer.png");
 }
+.navbar-inner, header{
+  border: none;
+  padding: 15px 0;
+  background: url("../img/header-footer.png");
+}
 .navbar .brand-bootbus {
 	font-size: 30px;
 	cursor: pointer;

@@ -1,10 +1,29 @@
 EShop::Application.routes.draw do
 
-  get "static_pages/start"
-  get "static_pages/products"
-  get "static_pages/about"
-  get "static_pages/faq"
-  get "static_pages/contact"
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root  'static_pages#start'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  match '/start',    to: 'static_pages#start',    via: 'get'
+  match '/about',   to: 'static_pages#about',   via: 'get'
+  match '/contact', to: 'static_pages#contact', via: 'get'
+  match '/faq', to: 'static_pages#faq', via: 'get'
+  match '/products', to: 'static_pages#products', via: 'get'
+
+    match '/help',    to: 'static_pages#help',    via: 'get' 
+  match '/about',   to: 'static_pages#about',   via: 'get'  
+  match '/contact', to: 'static_pages#contact', via: 'get' 
+  match '/signup',  to: 'users#new',            via: 'get'
+ match '/edit',  to: 'users#new',            via: 'get'
+
+
+  # get "static_pages/start"
+  # get "static_pages/products"
+  # get "static_pages/about"
+  # get "static_pages/faq"
+  # get "static_pages/contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
