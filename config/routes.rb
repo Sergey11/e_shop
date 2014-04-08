@@ -1,5 +1,6 @@
 EShop::Application.routes.draw do
 
+  get "proproduct/new"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#start'
@@ -10,13 +11,14 @@ EShop::Application.routes.draw do
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
   match '/faq', to: 'static_pages#faq', via: 'get'
-  match '/products', to: 'static_pages#products', via: 'get'
 
-    match '/help',    to: 'static_pages#help',    via: 'get' 
-  match '/about',   to: 'static_pages#about',   via: 'get'  
-  match '/contact', to: 'static_pages#contact', via: 'get' 
-  match '/signup',  to: 'users#new',            via: 'get'
- match '/edit',  to: 'users#new',            via: 'get'
+  match '/product', to: 'static_pages#product', via: 'get'
+
+ #  match '/help',    to: 'static_pages#help',    via: 'get' 
+ #  match '/about',   to: 'static_pages#about',   via: 'get'  
+ #  match '/contact', to: 'static_pages#contact', via: 'get' 
+ #  match '/signup',  to: 'users#new',            via: 'get'
+ # match '/edit',  to: 'users#new',            via: 'get'
 
 
   # get "static_pages/start"
