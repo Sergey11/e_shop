@@ -1,0 +1,67 @@
+
+<!-- Start: Main content -->
+    <div class="content">    
+      <div class="container">
+        <!-- Start: Product description -->
+        <airticle class="article">
+          <div class="row bottom-space">
+            <div class="span12">
+              <div class="page-header">
+                <h1>Product <small><%= @products.name %></small></h1>
+              </div>
+            </div>
+            <div class="span12 center-align">
+              <%= image_tag @products.foto.url %>            
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10 offset1">
+              <p>
+              <%= @products.description %>
+              </p>        
+              <div class="span8 offset1">
+                <h3>Fetures of <%= @products.name %></h3>
+                <%= @products.fetures %>
+              <!--   <ul class="features">
+                  <li>
+                    <i class="icon-ok "></i>24 hrs support
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>
+                  <li>
+                    <i class="icon-ok "></i>unlimited download
+                  </li>                  
+                </ul> -->
+              </div>                                              
+            </div>      
+          </div>
+          <div class="row">
+            <div class="span10 offset1">
+              <hr>
+              <div class="span3">
+                <a class="btn btn-large btn-block" href="#">Buy now</a>
+              </div>
+              </div>              
+            </div>
+          </div>
+        </airticle>
+        <!-- End: Product description -->
+      </div>
+    </div>
+    </div>

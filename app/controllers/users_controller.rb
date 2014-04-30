@@ -5,6 +5,8 @@ class UsersController < ApplicationController
    def show
     @user = User.find(params[:id])
   end
+   
+   
 
   def new
     @user = User.new
@@ -29,7 +31,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :name, :password)
+      params.require(:user).permit(:name, :password, :password_confirmation)
     end
 
     def signed_in_user

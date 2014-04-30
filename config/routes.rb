@@ -1,19 +1,34 @@
 EShop::Application.routes.draw do
 
-  get "proproduct/new"
+    
+
+  # get "products/edit"
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+
+  resources :products
+
+
   root  'static_pages#start'
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/start',    to: 'static_pages#start',    via: 'get'
-  match '/about',   to: 'static_pages#about',   via: 'get'
+
+  match '/newu',  to: 'users#new',                 via: 'get'
+  match '/updateu',  to: 'users#edit',                 via: 'get'
+  match '/showu',  to: 'users#show',                 via: 'get'
+  
+  
+  match '/signin',  to: 'sessions#new',             via: 'get'
+  match '/signout', to: 'sessions#destroy',      via: 'delete'
+
+  match '/start',    to: 'static_pages#start',      via: 'get'
+  match '/about',   to: 'static_pages#about',    via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
-  match '/faq', to: 'static_pages#faq', via: 'get'
-
+  match '/faq',       to: 'static_pages#faq',         via: 'get'
   match '/product', to: 'static_pages#product', via: 'get'
+  match '/allproduct', to: 'static_pages#allproduct', via: 'get'
 
+  match '/newp',  to: 'products#new',                   via: 'get'
+  match '/showp',  to: 'products#show',              via: 'get'
+  
  #  match '/help',    to: 'static_pages#help',    via: 'get' 
  #  match '/about',   to: 'static_pages#about',   via: 'get'  
  #  match '/contact', to: 'static_pages#contact', via: 'get' 
