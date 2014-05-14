@@ -14,9 +14,10 @@ EShop::Application.routes.draw do
   match '/newu',  to: 'users#new',                 via: 'get'
   match '/updateu',  to: 'users#edit',                 via: 'get'
   match '/showu',  to: 'users#show',                 via: 'get'
+  match '/signin',  to: 'users#index',             via: 'get'
   
   
-  match '/signin',  to: 'sessions#new',             via: 'get'
+  
   match '/signout', to: 'sessions#destroy',      via: 'delete'
 
   match '/start',    to: 'static_pages#start',      via: 'get'
