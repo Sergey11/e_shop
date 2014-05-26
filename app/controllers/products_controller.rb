@@ -12,15 +12,12 @@ class ProductsController < ApplicationController
 
    def update
      @product = Product.find(params[:id])
-
      if @product.update_attributes(params[:product].permit(:name, :description, :fetures, :foto))
         redirect_to @product
      else
         render 'new'
      end
-
   end
-
   
   def create
     product = Product.new(product_params)
