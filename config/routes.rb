@@ -2,7 +2,7 @@ EShop::Application.routes.draw do
 
   resources :users
   resources :products
-  resources :sessions, only: [:new, :create, :destroy ]
+  resources :sessions, only: [:new, :create, :destroy, :show]
 
   resources :admins
 

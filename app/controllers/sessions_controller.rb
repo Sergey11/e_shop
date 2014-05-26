@@ -9,8 +9,8 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:session][:name])
     
     if user && user.authenticate(params[:session][:password])
-      @products = Product.new
-      render 'products/new'
+      sign_in user
+      redirect_to products_path
     else
       flash.now[:error] = 'Invalid email/password combination'
       render 'new'
