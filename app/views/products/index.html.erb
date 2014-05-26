@@ -6,7 +6,7 @@
  <h2> <%= i.fetures%></li></h2>
   <%= image_tag i.foto.url %>
   <%= button_to "Destroy", {controller: "products", action: "destroy", id: i.id }, method: :delete, data: { confirm: "Are you sure?" } %>
-  <%= button_to "Update", {controller: "products", action: "update", id: i.id }, method: :get, data: { confirm: "Are you sure?" } %>
+  <%= button_to "Update", {controller: "products", action: "edit", id: i.id }, method: :get, data: { confirm: "Are you sure?" } %>
 
 </ul>
 
