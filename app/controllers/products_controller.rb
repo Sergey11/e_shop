@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
    def update
      @product = Product.find(params[:id])
 
-     if @product.update_attributes(params.permit(:name, :description, :fetures, :foto))
+     if @product.update_attributes(params[:product].permit(:name, :description, :fetures, :foto))
         redirect_to @product
      else
         render 'new'
