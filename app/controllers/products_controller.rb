@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   
   def edit
-    @product = Product.new
+    @product = Product.find(params[:id])
   end
 
 
@@ -10,19 +10,40 @@ class ProductsController < ApplicationController
 
   end
 
-  def create
+   def update
+     @product = Product.find(params[:id])
 
+     if @product.update_attributes(params[:product])
+        flash[:success] = "Product updated."
+        redirect_to @product
+     else
+        ender 'new'
+     end
+
+  end
+
+  
+  def create
     product = Product.new(product_params)
     product.save!
     @products = product
     product.foto.url 
     product.foto.current_path # => 'path/to/file.png'
     redirect_to @products
+  end
 
+def index
+  @products = Product.all
+end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to action: 'index'
   end
 
   def show
-    @products = Product.find params[:id]
+    @product = Product.find params[:id]
 
   end
 

@@ -15,8 +15,14 @@ class FotoUploader < CarrierWave::Uploader::Base
   
 
   def store_dir
-        'e_shop/app/upload'
+        'upload'
   end
+
+  def filename 
+   "#{original_filename}"
+ end
+#{model.id}
+  
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
@@ -25,6 +31,7 @@ class FotoUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]

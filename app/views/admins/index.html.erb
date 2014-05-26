@@ -1,0 +1,15 @@
+<h1><% @products.each do | i | %></h1>
+
+<ul>
+  <li><h1><a href="show?id=<%= i.id %>" ><%= i.name %></a></h1>>
+  <h1><%= i.description%></h1>
+ <h2> <%= i.fetures%></li></h2>
+  <%= image_tag i.foto.url %>
+  <%= button_to "Destroy", {controller: "admins", action: "destroy", id: i.id }, method: :delete, data: { confirm: "Are you sure?" } %>
+
+</ul>
+
+<%end%>
+
+
+

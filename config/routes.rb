@@ -1,25 +1,25 @@
 EShop::Application.routes.draw do
 
-    
-
-  # get "products/edit"
   resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-
   resources :products
+  resources :sessions, only: [:new, :create, :destroy ]
 
+  resources :admins
 
-  root  'static_pages#start'
+ 
+
+ # namespace :admins do
+ #    resources :new, :show
+ #  end
+
+  root 'static_pages#start'
 
   match '/newu',  to: 'users#new',                 via: 'get'
-  match '/updateu',  to: 'users#edit',                 via: 'get'
-  match '/showu',  to: 'users#show',                 via: 'get'
   match '/signin',  to: 'users#index',             via: 'get'
-  
-  
-  
-  match '/signout', to: 'sessions#destroy',      via: 'delete'
 
+  
+  
+  
   match '/start',    to: 'static_pages#start',      via: 'get'
   match '/about',   to: 'static_pages#about',    via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
@@ -29,19 +29,7 @@ EShop::Application.routes.draw do
 
   match '/newp',  to: 'products#new',                   via: 'get'
   match '/showp',  to: 'products#show',              via: 'get'
-  
- #  match '/help',    to: 'static_pages#help',    via: 'get' 
- #  match '/about',   to: 'static_pages#about',   via: 'get'  
- #  match '/contact', to: 'static_pages#contact', via: 'get' 
- #  match '/signup',  to: 'users#new',            via: 'get'
- # match '/edit',  to: 'users#new',            via: 'get'
 
-
-  # get "static_pages/start"
-  # get "static_pages/products"
-  # get "static_pages/about"
-  # get "static_pages/faq"
-  # get "static_pages/contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
