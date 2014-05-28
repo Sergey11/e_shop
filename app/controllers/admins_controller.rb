@@ -8,29 +8,18 @@ class AdminsController < ApplicationController
     @products = Product.all
   end
 
-  def create
+  
+  def update
+     @product = Product.find(params[:id])
 
-    product = Product.new(product_params)
-    product.save!
-    @products = product
-    product.foto.url 
-    product.foto.current_path # => 'path/to/file.png'
-    redirect_to action: 'index'
+     if @product.update_attributes(params[:name])
+        flash[:success] = "Product updated."
+        redirect_to @product
+     else
+        ender 'new'
+     end
 
   end
-
- 
-  # def update
-  #    @product = Product.find(params[:id])
-
-  #    if @product.update_attributes(params[:product])
-  #       flash[:success] = "Product updated."
-  #       redirect_to @product
-  #    else
-  #       ender 'new'
-  #    end
-
-  # end
 
 
   def destroy

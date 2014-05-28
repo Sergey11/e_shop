@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
      if @product.update_attributes(params[:product].permit(:name, :description, :fetures, :foto))
         redirect_to @product
      else
+        flash.now[:error] = 'Fill all fields'
         render 'new'
      end
   end

@@ -55,8 +55,9 @@
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="contact.html">Contact us</a></li>
                 
-                <% if current_user %>
-                  <li><%= link_to "Sign out", session_path(current_user.id) %></li>
+                <% if signed_in? %>
+                  <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+
                 <% else %>
                   <li><%= link_to "Sign up", new_user_path %></li>
                   <li><%= link_to "Sign in", new_session_path %></li>

@@ -2,7 +2,7 @@ EShop::Application.routes.draw do
 
   resources :users
   resources :products
-  resources :sessions, only: [:new, :create, :destroy, :show]
+  resources :sessions, only: [:new, :create, :destroy]
 
   resources :admins
 
@@ -14,8 +14,10 @@ EShop::Application.routes.draw do
 
   root 'static_pages#start'
 
-  match '/newu',  to: 'users#new',                 via: 'get'
-  match '/signin',  to: 'users#index',             via: 'get'
+  match '/newu',  to: 'users#new',                    via: 'get'
+  match '/signin',  to: 'users#index',                 via: 'get'
+
+  match '/signout',    to: 'sessions#destroy'   , via: 'delete'
 
   
   
