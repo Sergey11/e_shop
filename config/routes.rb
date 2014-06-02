@@ -8,19 +8,15 @@ EShop::Application.routes.draw do
 
  
 
- # namespace :admins do
- #    resources :new, :show
- #  end
+ namespace :admin do
+    resources :products
+  end
 
   root 'static_pages#start'
 
-  match '/newu',  to: 'users#new',                    via: 'get'
   match '/signin',  to: 'users#index',                 via: 'get'
 
   match '/signout',    to: 'sessions#destroy'   , via: 'delete'
-
-  
-  
   
   match '/start',    to: 'static_pages#start',      via: 'get'
   match '/about',   to: 'static_pages#about',    via: 'get'
@@ -28,10 +24,6 @@ EShop::Application.routes.draw do
   match '/faq',       to: 'static_pages#faq',         via: 'get'
   match '/product', to: 'static_pages#product', via: 'get'
   match '/allproduct', to: 'static_pages#allproduct', via: 'get'
-
-  match '/newp',  to: 'products#new',                   via: 'get'
-  match '/showp',  to: 'products#show',              via: 'get'
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,54 @@
+
+<!-- Start: Main content -->
+<h1><% @products.each do | i | %></h1>
+    <div class="content">    
+      <div class="container">
+        <!-- Start: Product description -->
+        <airticle class="article">
+          <div class="row bottom-space">
+            <div class="span12">
+              <div class="page-header">
+              
+                <h1>Product <small><a href="products/<%= i.id %>" ><%= i.name %></a></small></h1>
+              </div>
+            </div>
+            <div class="span12 center-align">
+             <%= image_tag i.foto.url %>       
+            </div>
+          </div>
+          <div class="row">
+            <div class="span10 offset1">
+              
+                <%= i.description%>
+              
+              
+              <div class="span8 offset1">
+                <h3>Fetures of <%= i.name %></h3>
+                <ul class="features">
+                <% i.fetures.split("\n").each do |feture| %>
+                   <li class="icon-ok"><%= feture %></li>
+                  <% end %>
+                </ul>
+              </div>                                              
+            </div>      
+          </div>
+          <div class="row">
+            <div class="span10 offset1">
+              <hr>
+              <div class="span3">
+              <p>
+              <%= button_to "Destroy", {controller: "products", action: "destroy", id: i.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-large btn-block" %>
+                  <%= button_to "Update", {controller: "products", action: "edit", id: i.id }, method: :get, class: "btn btn-large btn-block" %>
+              </p>
+                <a class="btn btn-large btn-block" href="#">Buy now</a>
+              </div>
+              </div>              
+            </div>
+          </div>
+        </airticle>
+
+        <!-- End: Product description -->
+      </div>
+    </div>
+    </div>
+    <%end%>

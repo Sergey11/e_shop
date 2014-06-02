@@ -19,9 +19,9 @@ class FotoUploader < CarrierWave::Uploader::Base
   end
 
   def filename 
-   "#{original_filename}"
+   "#{model.id}.#{file.extension}"
  end
-#{model.id}
+
   
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

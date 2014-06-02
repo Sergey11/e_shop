@@ -6,13 +6,13 @@ class SessionsController < ApplicationController
 
    def create
     
-    user = User.find_by(name: params[:session][:name])
+    user = User.find_by(email: params[:session][:email])
     
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to products_path
+      redirect_to admin_products_path
     else
-      flash.now[:error] = 'Invalid email/password combination'
+      flash.now[:error] = 'Invalid name or password combination'
       render 'new'
     end
   end
@@ -21,10 +21,5 @@ class SessionsController < ApplicationController
     sign_out
     redirect_to root_url
   end
-
-  # def show
-  #   sign_out
-  #   redirect_to root_url
-  # end
 
 end

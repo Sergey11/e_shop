@@ -15,7 +15,7 @@
               <%= form_for(:session, url: sessions_path , class: "form-horizontal form-signin-signup") do |f| %>
         
               
-                <%= f.text_field :name , placeholder: "Name" %><br>
+               <%= f.email_field :email , placeholder: "Email" %><br>
                 
                 <%= f.password_field :password  , placeholder: "Password" %><br>
 
