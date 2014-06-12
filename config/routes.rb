@@ -4,9 +4,7 @@ EShop::Application.routes.draw do
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
 
- 
-
- namespace :admin do
+  namespace :admin do
     resources :products
   end
 
@@ -19,8 +17,6 @@ EShop::Application.routes.draw do
   match '/reset_password',    to: 'tokens#reset_password'   , via: 'get'
   match '/token/:token',    to: 'tokens#parse_token'   , via: 'get'
   match '/update_password',    to: 'tokens#update_password'   , via: 'post'
-  
-  
   
   match '/start',    to: 'static_pages#start',      via: 'get'
   match '/about',   to: 'static_pages#about',    via: 'get'
