@@ -4,8 +4,6 @@ EShop::Application.routes.draw do
   resources :products
   resources :sessions, only: [:new, :create, :destroy]
 
-  resources :admins
-
  
 
  namespace :admin do
@@ -14,9 +12,15 @@ EShop::Application.routes.draw do
 
   root 'static_pages#start'
 
-  match '/signin',  to: 'users#index',                 via: 'get'
-
   match '/signout',    to: 'sessions#destroy'   , via: 'delete'
+  match '/fogotpassword',    to: 'sessions#fogotpassword'   , via: 'get'
+
+  match '/create_token',    to: 'tokens#create_token'   , via: 'get'
+  match '/reset_password',    to: 'tokens#reset_password'   , via: 'get'
+  match '/token/:token',    to: 'tokens#parse_token'   , via: 'get'
+  match '/update_password',    to: 'tokens#update_password'   , via: 'post'
+  
+  
   
   match '/start',    to: 'static_pages#start',      via: 'get'
   match '/about',   to: 'static_pages#about',    via: 'get'

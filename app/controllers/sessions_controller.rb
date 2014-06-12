@@ -17,6 +17,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  def  fogotpassword
+  
+  end
+
+
   def destroy
     sign_out
     redirect_to root_url

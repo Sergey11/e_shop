@@ -32,17 +32,13 @@
                         <input type="checkbox"> Remember me
                       </label>                      
                     </div>
-                    <div class="pull-right">
-                      <a href="#">Forgot password?</a>
-                    </div>
-
+                   
                     <div class="clearfix">
                     </div>
                   </div>
-                  <%= f.submit "Sign up", class: "btn btn-large btn-primary" %>
+                  <%= link_to "Sign up", new_user_path,  class: "btn btn-large btn-primary" %>
+                  
                   <% end %>
-                <h4><i class="icon-question-sign"></i> Don't have an account?</h4>
-                <a href="signup.html" class="btn btn-large bottom-space">Signup</a>
                 <h4><i class="icon-thumbs-up"></i> Sign in with third party account</h4>
                 <ul class="signin-with-list">
                   <li>

@@ -14,9 +14,8 @@ class UsersController < ApplicationController
   end
 
   def update   
-    @user = User.new(user_params)
+    @user = User.find params[:id]
     if @user.update_attributes(user_params)
-      sign_in @user
       redirect_to user_path
     else
       render 'new'
@@ -26,6 +25,7 @@ class UsersController < ApplicationController
     def create    
     @user = User.new(user_params)
     if @user.save
+      UserMailer.welcome_email(@user).deliver
       sign_in @user
       redirect_to @user
     else

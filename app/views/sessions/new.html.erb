@@ -9,7 +9,7 @@
           <div class="span6 offset3">
             <h4 class="widget-header"><i class="icon-lock"></i> Signin </h4>
             <div class="widget-body">
-              <div class="center-align">
+              <div class="center-align"><%= flash[:error] %></div>
 
               
               <%= form_for(:session, url: sessions_path , class: "form-horizontal form-signin-signup") do |f| %>
@@ -27,7 +27,8 @@
                       </label>                      
                     </div>
                     <div class="pull-right">
-                      <a href="#">Forgot password?</a>
+                    <%= link_to "Forgot password?", fogotpassword_path%>
+
                     </div>
 
                     <div class="clearfix">
@@ -36,7 +37,7 @@
                   <%= f.submit "Sign in", class: "btn btn-primary btn-large" %>
                       <% end %>
                 <h4><i class="icon-question-sign"></i> Don't have an account?</h4>
-                <a href="signup.html" class="btn btn-large bottom-space">Signup</a>
+                <%= link_to "Sign up", new_user_path, class: "btn btn-large bottom-space" %>
                 <h4><i class="icon-thumbs-up"></i> Sign in with third party account</h4>
                 <ul class="signin-with-list">
                   <li>

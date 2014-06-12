@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 1 }
 
   has_secure_password
+  acts_as_messageable
   
   before_create :create_remember_token
 
